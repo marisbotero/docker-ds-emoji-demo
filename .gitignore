@@ -1,0 +1,78 @@
+# Byte-compiled / compiled files
+__pycache__/
+*.py[cod]
+*.so
+*.dll
+*.dylib
+*.pyd
+
+# C extensions
+*.c
+*.cpp
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# mypy
+.mypy_cache/
+.dmypy.json
+
+# VS Code
+.vscode/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+.Ruserdata
+
+# Shiny logs
+r-shiny/logs/
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# System
+.DS_Store
+Thumbs.db
+
+# Artifacts
+python-app/artifacts/

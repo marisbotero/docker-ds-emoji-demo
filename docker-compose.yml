@@ -1,0 +1,26 @@
+services:
+  python-app:
+    build: ./python-app
+    container_name: ds-emoji-python
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./python-app:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+
+  r-shiny:
+    build: ./r-shiny
+    container_name: ds-emoji-shiny
+    depends_on:
+      python-app:
+        condition: service_healthy
+    ports:
+      - "3838:3838"
+    volumes:
+      - ./r-shiny:/srv/shiny-server/
