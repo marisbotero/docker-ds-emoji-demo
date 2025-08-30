@@ -1,96 +1,44 @@
 # Docker DS Emoji Demo 🐳✨
 
-**Objetivo:** ¡Demostrar de forma divertida cómo combinar **Python (FastAPI + ML)** y **R Shiny** en un stack reproducible con **Docker Compose**!  
-Un solo `docker compose up --build` y tienes un flujo de trabajo Data Science listo para sorprender.
+**Goal:** Show, in a simple and cool way, how to combine **Python (FastAPI + ML emoji model)** with **R Shiny (dashboard)** using **Docker Compose**.
+Just run `docker compose up` and boom! → a reproducible stack on any machine.
 
-## 🚀 Requisitos
-- Docker Desktop (Windows/Mac) o Docker en Linux.
-- (Opcional) WSL2 en Windows para mejor rendimiento.
+## 🚀 Requirements
+- Docker Desktop (Windows/Mac) or Docker on Linux.
+- (Optional) WSL2 enabled on Windows for better performance.
 
-## ▶️ Cómo correr
+## ▶️ How to run
 ```bash
 docker compose up --build
 ```
-- FastAPI (Python): **http://localhost:8000/docs** (Swagger UI)
-- Shiny (R): **http://localhost:3838** (dashboard interactivo)
+- FastAPI (Python): **http://localhost:8000/docs**
+- Shiny (R): **http://localhost:3838**
 
-> Cambia el código en `python-app/` o `r-shiny/` y verás hot-reload automático gracias a los volúmenes montados.
+> If you edit files in `python-app/` or `r-shiny/`, changes are reflected instantly thanks to mounted volumes.
 
-## 🧠 ¿Qué hace el modelo?
-Un clasificador de emociones mini entrenado offline (ES/EN).  
-Convierte frases en una de **9 clases**:
+## 🧠 What does the model do?
+A mini classifier that maps text → categories (love 😍, angry 😡, sleepy 😴, robot 🤖). 
+It is trained at build-time with a small (ES/EN) dataset for 100% reproducibility and offline use.
 
-| Clase    | Emoji | Ejemplo frase (ES/EN)         |
-|----------|-------|------------------------------|
-| love     | 😍    | "me encanta", "i love this"  |
-| happy    | 😃    | "qué felicidad!", "awesome day"|
-| angry    | 😡    | "odio esto", "i hate bugs"    |
-| sleepy   | 😴    | "me duermo", "need a nap"     |
-| robot    | 🤖    | "hello robot", "ai models rock"|
-| party    | 🥳    | "fiesta hoy", "party time!"   |
-| sad      | 😢    | "estoy triste", "i am sad"    |
-| nerd     | 🤓    | "focus mode", "i love math"   |
-| docker   | 🐳    | "amo docker", "run docker compose"|
+## 🧩 Why Data Scientists love this
+- **Portability:** works the same on Mac/Windows/Linux.
+- **Reproducibility:** everything defined in images and `compose.yml`.
+- **Speed:** from “hello world” to dashboard in **minutes**.
 
-- Entrenado en build-time, reproducible y sin dependencias externas.
-- El endpoint `/predict` devuelve la predicción principal, alternativas ordenadas (todas las clases con probabilidad) y un mensaje motivacional.
-
-## 📦 Ejemplo de respuesta `/predict`
-```json
-{
-  "prediction": { "label": "docker", "emoji": "🐳", "confidence": 0.82 },
-  "alternatives": [
-    {"label": "docker", "emoji": "🐳", "confidence": 0.82},
-    {"label": "love", "emoji": "😍", "confidence": 0.12},
-    ...
-  ],
-  "message": "¡Todo es mejor en contenedores! / Everything is better in containers!"
-}
-```
-
-## 🧪 Frases para probar
-- "amo docker y los modelos" → `docker 🐳` o `love 😍`
-- "odio los bugs" → `angry 😡`
-- "me duermo" → `sleepy 😴`
-- "party time!" → `party 🥳`
-- "need to focus, hello robot" → `robot 🤖` o `nerd 🤓`
-- "estoy triste hoy" → `sad 😢`
-- "qué felicidad!" → `happy 😃`
-
-## 🧩 ¿Por qué esto le encanta a un Data Scientist?
-- **Portabilidad:** corre igual en Mac, Windows o Linux.
-- **Reproducibilidad:** todo versionado en imágenes y `compose.yml`.
-- **Velocidad:** del “hola mundo” a dashboard ML en **minutos**.
-- **Integración real:** Python y R colaborando, ¡sin dolor!
-- **UI wow:** dashboard visual, selector ES/EN, emojis grandes y gráficas cool.
-
-## 🛠️ Estructura
+## 🛠️ Structure
 ```
 docker-ds-emoji-demo/
 ├─ docker-compose.yml
-├─ python-app/       # API de predicción (FastAPI)
-└─ r-shiny/          # Dashboard Shiny
+├─ python-app/       # Prediction API (FastAPI)
+└─ r-shiny/          # Shiny Dashboard
 ```
 
-## ✨ Maris vibes
-- Shiny muestra el emoji grande con fade-in 🎉
-- README con emojis y copy friendly
-- Código limpio, educativo y divertido
+## ✨ Fun vibes
+- Shiny shows the emoji big and proud 🤩
+- README with emojis and friendly copy
+- Clean, educational code
 
-¡Listo para demos, workshops y sorprender a tu equipo! 💫
-
-## 🧩 Por qué esto le encanta a un Data Scientist
-- **Portabilidad:** funciona igual en Mac/Windows/Linux.
-- **Reproducibilidad:** todo definido en imágenes y `compose.yml`.
-- **Velocidad:** del “hola mundo” al dashboard en **minutos**.
-
-## 🛠️ Estructura
-```
-docker-ds-emoji-demo/
-├─ docker-compose.yml
-├─ python-app/       # API de predicción (FastAPI)
-└─ r-shiny/          # Dashboard Shiny
-```
+Ready for demos and workshops! 💫
 
 ## ✨ Maris vibes
 - Shiny muestra el emoji grande 🤩
