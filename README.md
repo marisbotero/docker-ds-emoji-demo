@@ -39,10 +39,3 @@ docker-ds-emoji-demo/
 - Clean, educational code
 
 Ready for demos and workshops! 💫
-
-## ✨ Maris vibes
-- Shiny muestra el emoji grande 🤩
-- README con emojis y copy friendly
-- Código limpio y educativo
-
-¡Listo para demos y workshops! 💫
